@@ -1,0 +1,188 @@
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-warp {
+  flex-wrap: wrap;
+}
+
+.flex-full {
+  flex: 1;
+}
+
+// 主题色
+.theme-c {
+  color: #3cbaff;
+}
+
+.grey-c {
+  color: #98A1A8;
+}
+
+.grey-c-search {
+  color: #768893;
+}
+
+.red-c {
+  color: #EA5950
+}
+
+.white-bg {
+  background-color: #fff;
+}
+
+.bg {
+  background-color: #fff;
+}
+
+.f16 {
+  font-size: .16rem;
+  line-height: .20rem;
+}
+
+.f18 {
+  font-size: .18rem;
+  line-height: .20rem;
+}
+
+.f20 {
+  font-size: .2rem;
+  line-height: .28rem;
+}
+
+.f22 {
+  font-size: .22rem;
+  line-height: .28rem;
+}
+
+// fontsize
+.f24 {
+  font-size: .24rem;
+  line-height: .32rem;
+}
+
+.f26 {
+  font-size: .26rem;
+  line-height: .32rem;
+}
+
+.f28 {
+  font-size: .28rem;
+  line-height: .38rem;
+}
+
+.f30 {
+  font-size: .30rem;
+  line-height: .38rem;
+}
+
+.f32 {
+  font-size: .32rem;
+  line-height: .38rem;
+}
+
+.z1 {
+  z-index: 100
+}
+
+.z2 {
+  z-index: 200
+}
+
+.z3 {
+  z-index: 300
+}
+
+.z4 {
+  z-index: 400
+}
+
+.z5 {
+  z-index: 500
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* 多行省略 */
+
+.ellipsis-2l {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* 数值代表显示几行 */
+  -webkit-box-orient: vertical;
+}
+
+//********************************
+.fixed-page {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #eaeff3;
+}
+
+.common-scroller {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.full-btn {
+  display: block;
+  text-align: center;
+  height: .88rem;
+  line-height: .88rem;
+  width: 100%;
+  font-size: .32rem;
+  &:active {
+    opacity: .7
+  }
+}
+
+// **************
+.slide-fade-enter-active {
+  transition: all .4s ease;
+  position: fixed;
+}
+
+.slide-fade-leave-active {
+  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  position: fixed;
+}
+
+.slide-fade-enter {
+  transform: translateX(100%);
+  // opacity: 0;
+}
+
+.slide-fade-leave-to {
+  transform: translateX(100%);
+  // opacity: 0;
+}
+
+// *****************
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  opacity: 1
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0
+}
