@@ -29,7 +29,8 @@ export default {
 
 <style lang="less" scoped>
 .back-msg {
-  width: 80%; // height: 68%;
+  width: 3.09rem; // height: 68%;
+  height: 4.4rem;
   position: fixed;
   opacity: 1;
   top: 14%;
@@ -39,9 +40,9 @@ export default {
   padding: 42px 52px;
 
   .QR {
-    width: 188px;
-    height: 188px;
-    margin: 24px 0 36px 0;
+    width: 200px;
+    height: 200px;
+    margin: 36px 0 48px 0;
   }
 
   .group-head {
@@ -52,7 +53,7 @@ export default {
   }
 
   .head-title {
-    font-size: 12px;
+    font-size: 0.16rem;
   }
 
   .bottom-tip {

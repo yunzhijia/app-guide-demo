@@ -4,7 +4,7 @@ import { setRootFs } from './tools/tool'
 import './components'
 import Vue from 'vue'
 import App from './App'
-setRootFs(3.75)
+setRootFs()
 Vue.config.productionTip = false
 
 new Vue({

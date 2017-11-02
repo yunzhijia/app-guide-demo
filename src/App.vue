@@ -38,8 +38,7 @@ body,
 .main {
   width: 100%;
   background: #f8f9fb;
-  //   height: 100%;
-  //   overflow-x: hidden;
+  overflow-x: hidden;
 }
 </style>
 

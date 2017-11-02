@@ -1,7 +1,7 @@
 <template>
   <a class="cell flex flex-center border border-b"
-     :style="{padding:padding}">
-    <div></div>
+     :class="{'none-border':noneBorder}">
+    <slot></slot>
     <p class="flex-full f32">{{text}}</p>
     <i class="icon iconfont icon-arrow-right"></i>
   </a>
@@ -12,11 +12,8 @@ export default {
   name: 'cell',
   props: {
     text: String,
-    icon: {
-      default: null
-    },
-    padding: {
-      default: '.13rem .15rem'
+    noneBorder: {
+      default: false
     }
   }
 }
@@ -25,6 +22,7 @@ export default {
 <style lang="less" scoped>
 .cell {
   background: #fff;
+  padding: 0.13rem 0.15rem;
 
   &:active {
     opacity: 0.5;
@@ -32,10 +30,6 @@ export default {
 
   &::after {
     left: 0.13rem;
-  }
-
-  &:last-child::after {
-    border: none;
   }
 
   .f32 {
@@ -46,6 +40,12 @@ export default {
 
   .icon {
     color: #768893;
+  }
+}
+
+.none-border {
+  &:last-child::after {
+    border: none;
   }
 }
 </style>

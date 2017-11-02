@@ -2,10 +2,17 @@
   <section class="main">
     <cell class="about"
           :text="about.question"
-          @click.native="setTarget(about)"></cell>
+          :none-border="true"
+          style="padding:.22rem .15rem"
+          @click.native="setTarget(about)">
+      <img class="header-img"
+           src="./imgs/dengpao@3x.png">
+    </cell>
     <ul>
-      <li v-for="(q,index) in questions">
+      <li v-for="(q,index) in questions"
+          :key="index">
         <cell :text="q.question"
+              :none-border="index===(questions.length-1)"
               @click.native="setTarget(q)"></cell>
       </li>
     </ul>
@@ -25,7 +32,8 @@ export default {
     return {
       about,
       questions,
-      target: null
+      target: null,
+      history: null
     }
   },
   created () {
@@ -39,11 +47,14 @@ export default {
       const hash = window.location.hash
       if (hash !== '#detail') {
         this.target = null
+      } else {
+        this.target = this.history
       }
     },
     setTarget (data) {
       this.target = data
-      window.location.hash = 'detail'
+      this.history = data
+      window.location.hash = '#detail'
     }
   },
   components: {
@@ -55,6 +66,11 @@ export default {
 <style lang="less" scoped>
 .about {
   margin: 0.12rem 0 0.11rem 0;
+}
+.header-img {
+  width: 0.18rem;
+  height: 0.2rem;
+  margin-right: 0.05rem;
 }
 </style>
 
