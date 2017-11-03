@@ -1,6 +1,6 @@
 # app-guide
 
-> A Vue.js project
+> 云之家移动应用引导页模板
 
 ## Build Setup
 

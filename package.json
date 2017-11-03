@@ -1,7 +1,7 @@
 {
   "name": "app-guide",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "云之家移动应用引导页模板",
   "author": "huansheng_huang <huansheng_huang@kingdee.com>",
   "private": true,
   "scripts": {
@@ -12,12 +12,9 @@
   },
   "dependencies": {
     "core-js": "^2.5.1",
-    "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue": "^2.5.2"
   },
   "devDependencies": {
-    "less": "^2.7.3",
-    "less-loader": "^4.0.5",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
@@ -47,6 +44,8 @@
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.17.3",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
