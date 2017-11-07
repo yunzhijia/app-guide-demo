@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { about, questions } from './store-simple'
+import { about, questions, webViewTitle } from './store-simple'
 import detail from './detail'
 export default {
   data () {
@@ -39,6 +39,9 @@ export default {
   },
   created () {
     window.onhashchange = this.hashChange
+    window.jsb.call('setWebViewTitle', {
+      title: webViewTitle || '应用指引'
+    })
   },
   beforeDestroy () {
     window.onhashchange = null

@@ -2,12 +2,14 @@
 这个属于纯文本的模板，比较复杂的参考store.js
 */
 
+export const webViewTitle = '应用市场'
+
 export const about = {
   question: '什么是应用市场？',
   // detail.vue中渲染的内容
   answer: [
     {
-      title: '点赞、评论、打赏，强大的沟通协作能力',
+      title: '什么是应用市场？',
       content: '云之家应用市场，为广大云之家用户提供涵盖协作、财务、人事、CRM、金融服务等各类应用，通过一站式的移动应用服务帮助企业轻松实现移动办公。'
     }
   ]
@@ -33,7 +35,7 @@ export const questions = [
     ]
   },
   {
-    question: '3.如何设置应用只对某部分特定员工可见？',
+    question: '3. 如何设置应用只对某部分特定员工可见？',
     answer: [
       {
         title: '如何设置应用只对某部分特定员工可见？',

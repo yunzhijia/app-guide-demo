@@ -1,3 +1,5 @@
+export const webViewTitle = '报表秀秀'
+
 export const about = {
   question: '报表秀秀是什么?',
   // detail.vue中渲染的内容

@@ -48,13 +48,14 @@ export default {
 
   .title {
     color: #1d1d1d;
-    font-size: 0.16rem;
-    line-height: 0.22rem;
+    font-size: 0.17rem;
+    line-height: 0.24rem;
+    font-weight: bold;
   }
   .content {
-    color: #768893;
+    color: #030303;
     font-size: 0.14rem;
-    line-height: 0.2rem;
+    line-height: 0.22rem;
     margin-top: 0.11rem;
   }
   .img {
