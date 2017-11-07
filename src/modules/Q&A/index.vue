@@ -4,6 +4,7 @@
           :text="about.question"
           :none-border="true"
           style="padding:.22rem .15rem"
+          font-size=".18rem"
           @click.native="setTarget(about)">
       <img class="header-img"
            src="./imgs/dengpao@3x.png">
@@ -25,7 +26,7 @@
 </template>
 
 <script>
-import { about, questions } from './store'
+import { about, questions } from './store-simple'
 import detail from './detail'
 export default {
   data () {

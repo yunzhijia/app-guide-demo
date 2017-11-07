@@ -2,7 +2,8 @@
   <a class="cell flex flex-center border border-b"
      :class="{'none-border':noneBorder}">
     <slot></slot>
-    <p class="flex-full f32">{{text}}</p>
+    <p class="flex-full f32"
+       :style="{fontSize:fontSize}">{{text}}</p>
     <i class="icon iconfont icon-arrow-right"></i>
   </a>
 </template>
@@ -12,6 +13,9 @@ export default {
   name: 'cell',
   props: {
     text: String,
+    fontSize: {
+      default: '.16rem'
+    },
     noneBorder: {
       default: false
     }
