@@ -1,48 +1,79 @@
 <template>
   <div>
     <mask-layer class="z4"></mask-layer>
-    <aside v-if="true"
-           class="back-msg white-bg z5 flex flex-column flex-center">
-      <div class="flex flex-center">
-        <img class="group-head"
-             src="https://www.yunzhijia.com/image/59e05fe0e4b0a34ecabbef71_ext/59e06907e4b0873449bcdd0d">
-        <span class="head-title">云之家应用中心交流群</span>
+    <aside class="back-msg white-bg z5 ">
+      <div class="flex flex-center bm-header abs">
+        <img v-if="store.groupHead"
+             class="group-head"
+             :src="store.groupHead">
+        <span class="head-title">{{store.appName+'交流群'}}</span>
       </div>
-      <img class="QR"
-           src="./QR.png">
-      <div class="bottom-tip">
+      <img class="QR abs"
+           :src="isForm?store.QRCode:(pixUrl+store.QRCode)">
+      <div class="bottom-tip abs">
         长按识别二维码进群
       </div>
-      <div class="close-btn"
-           @click="$emit('close')">
-        <i class="icon iconfont icon-iconfontcha grey-c"></i>
-      </div>
+      <i @click="$emit('close')"
+         class="icon iconfont icon-iconfontcha grey-c close-btn"
+         style="font-size:18px"></i>
     </aside>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'back-msg'
+  name: 'back-msg',
+  inject: ['query'],
+  props: {
+    store: Object
+  },
+  computed: {
+    pixUrl () {
+      return `static/public/${this.query.appId}/imgs/`
+    },
+    isForm () {
+      return this.query && this.query.form
+    }
+  },
+  mounted () {
+    this.$el.addEventListener('touchmove', (e) => {
+      e.stopPropagation()
+      e.preventDefault()
+    })
+  }
 }
 </script>
 
 <style lang="less" scoped>
+.abs {
+  position: absolute;
+}
 .back-msg {
-  width: 3.09rem; // height: 68%;
-  height: 4.4rem;
+  width: 2.81rem; // height: 68%;
+  height: 3.87rem;
   position: fixed;
   opacity: 1;
-  top: 14%;
-  left: 10%;
+  // top: 18%;
+  top: 1rem;
+  left: 0.47rem;
   border-radius: 4px;
   text-align: center;
-  padding: 42px 52px;
+  padding: 0.42rem 0.6rem;
+  font-family: PingFangSC-Regular;
+  text-align: center;
+
+  .bm-header {
+    width: 2.81rem;
+    text-align: center;
+    top: 0.44rem;
+    left: 0;
+  }
 
   .QR {
-    width: 200px;
-    height: 200px;
-    margin: 36px 0 48px 0;
+    top: 1.22rem;
+    left: 0.58rem;
+    width: 1.66rem;
+    height: 1.66rem;
   }
 
   .group-head {
@@ -53,19 +84,23 @@ export default {
   }
 
   .head-title {
-    font-size: 0.16rem;
+    font-size: 16px;
   }
 
   .bottom-tip {
-    font-size: 10px;
+    font-size: 14px;
     color: #1d1d1d;
+    bottom: 0.48rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
   }
   .close-btn {
     position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 18px;
-    padding: 10px;
+    right: 0.12rem;
+    top: 0.12rem;
+    font-size: 22px;
+    padding: 0;
   }
 }
 </style>

@@ -77,9 +77,12 @@ export const setRootFs = (width = 3.75) => {
   const dpr = window.devicePixelRatio
   let fontSize
   document.documentElement.setAttribute('data-dpr', dpr)
-  const userAgent = navigator.userAgent
-  if (userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) || userAgent.match(/Android/i)) {
-    fontSize = document.documentElement.clientWidth / width
-    document.documentElement.style.fontSize = fontSize + 'px'
-  }
+
+  fontSize = document.documentElement.clientWidth / width
+  document.documentElement.style.fontSize = fontSize + 'px'
+  // const userAgent = navigator.userAgent
+  // if (userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) || userAgent.match(/Android/i)) {
+  //   fontSize = document.documentElement.clientWidth / width
+  //   document.documentElement.style.fontSize = fontSize + 'px'
+  // }
 }

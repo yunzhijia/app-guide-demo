@@ -128,6 +128,14 @@
   -webkit-box-orient: vertical;
 }
 
+.can-click {
+  &:active {
+    background: rgba(232, 239, 240, 0.5) !important;
+    // opacity: .5 !important;
+    // color: rgb(63, 63, 63, 1)!important;
+  }
+}
+
 //********************************
 .fixed-page {
   position: fixed;
@@ -165,16 +173,15 @@
 .slide-fade-leave-active {
   transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   position: fixed;
+  opacity: 1;
 }
 
 .slide-fade-enter {
   transform: translateX(100%);
-  // opacity: 0;
 }
 
 .slide-fade-leave-to {
-  transform: translateX(100%);
-  // opacity: 0;
+  opacity: 0;
 }
 
 // *****************
@@ -185,4 +192,36 @@
 
 .fade-enter, .fade-leave-to {
   opacity: 0
+}
+
+// ************** 模仿ios切页
+.slide-left-enter-active, .slide-right-enter-active {
+  transition: all .2s cubic-bezier(.55, 0, .1, 1);
+  // will-change: transform;
+  // transform: perspective(-500px) translateZ(-500px);
+  // perspective: 80px;
+  opacity: 1;
+  position: fixed;
+  z-index: 50;
+  // z-index: 500;
+}
+
+.slide-left-leave-active, .slide-right-leave-active {
+  transition: all .4s cubic-bezier(.55, 0, .1, 1);
+  // will-change: transform;
+  // transform: perspective(500px) translateZ(500px);
+  // perspective: 80px;
+  opacity: 1;
+  position: fixed;
+}
+
+// <=
+.slide-left-enter, .slide-right-leave-active {
+  transform: translateX(100%);
+  opacity: 1;
+}
+
+.slide-left-leave-active, .slide-right-enter {
+  transform: translateX(-100%);
+  opacity: 1;
 }

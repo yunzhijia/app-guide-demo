@@ -3,16 +3,31 @@
     <footer class="add-footer flex flex-center border border-t"
             @click="showQR=true">
       <i class="icon iconfont icon-yingyongqunzu"></i>
-      <span class="add">加入应用交流群</span>
+      <span class="add">{{text}}</span>
     </footer>
     <back-msg v-if="showQR"
-              @close="showQR=false"></back-msg>
+              :store="store"
+              @close="showQR=false">
+    </back-msg>
   </div>
 </template>
 
 <script>
 export default {
   name: 'footer-btn',
+  props: {
+    store: Object
+  },
+  computed: {
+    text () {
+      return `加入${this.store.appName}交流群`
+    }
+  },
+  watch: {
+    '$route.path' (val) {
+      this.showQR = false
+    }
+  },
   data () {
     return {
       showQR: false
@@ -32,14 +47,16 @@ export default {
   text-align: center;
   &:active {
     opacity: 0.5;
+    background: #e8eff0;
   }
   .add {
     color: #3f3f3f;
     margin-left: 0.1rem;
+    margin-top: 0.04rem;
   }
   .iconfont {
     font-size: 0.18rem;
-    margin-bottom: 0.02rem;
+    margin-top: 0.04rem;
   }
 }
 </style>

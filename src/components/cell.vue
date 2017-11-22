@@ -1,9 +1,8 @@
 <template>
-  <a class="cell flex flex-center border border-b"
+  <a class="cell flex flex-center border border-b can-click"
      :class="{'none-border':noneBorder}">
     <slot></slot>
-    <p class="flex-full f32"
-       :style="{fontSize:fontSize}">{{text}}</p>
+    <p class="flex-full f32">{{text}}</p>
     <i class="icon iconfont icon-arrow-right"></i>
   </a>
 </template>
@@ -13,9 +12,6 @@ export default {
   name: 'cell',
   props: {
     text: String,
-    fontSize: {
-      default: '.16rem'
-    },
     noneBorder: {
       default: false
     }
@@ -29,7 +25,8 @@ export default {
   padding: 0.13rem 0.15rem;
 
   &:active {
-    opacity: 0.5;
+    // opacity: 0.5;
+    background: #e8eff0;
   }
 
   &::after {

@@ -4,11 +4,19 @@
 </template>
 
 <script>
-import { getQuery } from './tools/tool'
 export default {
+  provide () {
+    const { query } = this
+    return {
+      query
+    }
+  },
   data () {
     return {
-      target: 'qa'
+      target: 'qa',
+      query: {
+        appId: 'guide'
+      }
     }
   },
   created () {
@@ -16,15 +24,10 @@ export default {
       enable: 0
     })
     window.jsb.call('closePop')
-    window.jsb.call('setWebViewTitle', {
-      title: '应用指引'
-    })
-    const q = getQuery()
-    this.target = q.type || 'qa'
+    this.target = this.query.type || 'fqa'
   },
   components: {
-    'qa': () => import('./modules/Q&A/index.vue'),
-    'guide': () => import('./modules/guide/index.vue')
+    'fqa': () => import('./modules/FQA/index.vue')
   }
 }
 </script>
@@ -39,6 +42,7 @@ body,
   width: 100%;
   background: #f8f9fb;
   overflow-x: hidden;
+  margin-bottom: 0.44rem;
 }
 </style>
 
